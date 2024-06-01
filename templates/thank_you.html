@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Terima Kasih!</h1>
+        <p>Terima kasih telah mengisi survei kami.</p>
+        
+        <h2>Umpan Balik Anda:</h2>
+        <ul>
+            {% for item in feedback %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+        
+        {% if is_happy %}
+        <p>Kami senang mengetahui bahwa Anda puas dengan layanan kami.</p>
+        {% else %}
+        <p>Kami akan berusaha untuk meningkatkan layanan kami berdasarkan umpan balik Anda.</p>
+        {% endif %}
+        <a href="{{ url_for('survey') }}" class="button">Kembali ke Beranda</a>
+    </div>
+</body>
+</html>
