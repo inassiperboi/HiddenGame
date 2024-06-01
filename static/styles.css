@@ -1,0 +1,112 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e0e1a; /* Warna latar belakang */
+    color: #ffffff; /* Warna teks */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #1a1a2a; /* Warna latar belakang kontainer */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efek bayangan */
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff; /* Warna teks utama */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ffffff; /* Warna teks kedua */
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #ffffff; /* Warna teks paragraf */
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: #ffffff; /* Warna teks daftar */
+    text-align: left;
+}
+
+ul li {
+    background-color: #2a2a3a; /* Warna latar belakang item daftar */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.button {
+    display: inline-block;
+    background-color: #2E6ABE; /* Warna latar belakang tombol */
+    color: #ffffff; /* Warna teks tombol */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1D4C99; /* Warna latar belakang saat hover */
+}
+
+@media (max-width: 600px) {
+    body {
+        justify-content: flex-start; /* Memulai konten dari kiri */
+    }
+
+    .container {
+        width: 90%; /* Lebar kontainer diatur menjadi 90% */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Ukuran font h1 dikurangi */
+    }
+
+    h2 {
+        font-size: 1.1em; /* Ukuran font h2 dikurangi */
+    }
+
+    ul li {
+        padding: 8px; /* Padding item daftar dikurangi */
+        margin-bottom: 8px; /* Margin bawah item daftar dikurangi */
+    }
+
+    .button {
+        display: block; /* Membuat tombol menjadi blok untuk menempatkannya pada baris yang berbeda */
+        margin-top: 20px; /* Menambah margin atas pada tombol */
+        width: 100%; /* Menyesuaikan lebar tombol dengan lebar kontainer */
+    }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}

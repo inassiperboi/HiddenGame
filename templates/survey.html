@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Kepuasan Pelanggan HiddenGame</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/lokasi">Lokasi</a></li>
+            <li><a href="/kontak">Kontak</a></li>
+        </ul>
+    </nav>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo HiddenGame" class="logo">
+        <h1>Halo Pelanggan HiddenGame!</h1>
+        <p class="greeting">Bantu kami agar lebih baik yuk!</p>
+    </header>
+    <main>
+        <form action="{{ url_for('survey') }}" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <p class="greeting">Survey Kepuasan Pelanggan Hidden Game</p>
+                <label>Seberapa lengkapkah produk yang tersedia di HiddenGame? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="produk_lengkap" value="1"> 1</label>
+                    <label><input type="radio" name="produk_lengkap" value="2"> 2</label>
+                    <label><input type="radio" name="produk_lengkap" value="3"> 3</label>
+                    <label><input type="radio" name="produk_lengkap" value="4"> 4</label>
+                    <label><input type="radio" name="produk_lengkap" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Seberapa sepadankah harga produk yang Anda beli dengan kualitasnya? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="harga_kualitas" value="1"> 1</label>
+                    <label><input type="radio" name="harga_kualitas" value="2"> 2</label>
+                    <label><input type="radio" name="harga_kualitas" value="3"> 3</label>
+                    <label><input type="radio" name="harga_kualitas" value="4"> 4</label>
+                    <label><input type="radio" name="harga_kualitas" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Seberapa ramah dan membantu staf toko dalam melayani Anda? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="staf_ramahan" value="1"> 1</label>
+                    <label><input type="radio" name="staf_ramahan" value="2"> 2</label>
+                    <label><input type="radio" name="staf_ramahan" value="3"> 3</label>
+                    <label><input type="radio" name="staf_ramahan" value="4"> 4</label>
+                    <label><input type="radio" name="staf_ramahan" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Seberapa mudahkah proses pembayaran di toko? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="proses_pembayaran" value="1"> 1</label>
+                    <label><input type="radio" name="proses_pembayaran" value="2"> 2</label>
+                    <label><input type="radio" name="proses_pembayaran" value="3"> 3</label>
+                    <label><input type="radio" name="proses_pembayaran" value="4"> 4</label>
+                    <label><input type="radio" name="proses_pembayaran" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Seberapa cepatkah produk yang Anda beli diproses dan dikirim? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="kecepatan_pengiriman" value="1"> 1</label>
+                    <label><input type="radio" name="kecepatan_pengiriman" value="2"> 2</label>
+                    <label><input type="radio" name="kecepatan_pengiriman" value="3"> 3</label>
+                    <label><input type="radio" name="kecepatan_pengiriman" value="4"> 4</label>
+                    <label><input type="radio" name="kecepatan_pengiriman" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Secara keseluruhan, seberapa puas Anda dengan pengalaman berbelanja di HiddenGame? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="kepuasan_keseluruhan" value="1"> 1</label>
+                    <label><input type="radio" name="kepuasan_keseluruhan" value="2"> 2</label>
+                    <label><input type="radio" name="kepuasan_keseluruhan" value="3"> 3</label>
+                    <label><input type="radio" name="kepuasan_keseluruhan" value="4"> 4</label>
+                    <label><input type="radio" name="kepuasan_keseluruhan" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Apakah Anda akan merekomendasikan HiddenGame kepada orang lain? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="rekomendasi" value="1"> 1</label>
+                    <label><input type="radio" name="rekomendasi" value="2"> 2</label>
+                    <label><input type="radio" name="rekomendasi" value="3"> 3</label>
+                    <label><input type="radio" name="rekomendasi" value="4"> 4</label>
+                    <label><input type="radio" name="rekomendasi" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Apakah Anda akan berbelanja kembali di HiddenGame? <span class="required-star">*</span></label>
+                <div class="options">
+                    <label><input type="radio" name="berbelanja_kembali" value="1"> 1</label>
+                    <label><input type="radio" name="berbelanja_kembali" value="2"> 2</label>
+                    <label><input type="radio" name="berbelanja_kembali" value="3"> 3</label>
+                    <label><input type="radio" name="berbelanja_kembali" value="4"> 4</label>
+                    <label><input type="radio" name="berbelanja_kembali" value="5"> 5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Komentar tambahan:</label>
+                <textarea name="komentar" rows="4" placeholder="Tulis komentar Anda di sini..."></textarea>
+            </div>
+            <button type="submit">Kirim</button>
+        </form>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navUL = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', function() {
+                navUL.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
