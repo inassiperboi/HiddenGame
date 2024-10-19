@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokasi HiddenGame</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('survey') }}">Beranda</a></li>
+            <li><a href="{{ url_for('lokasi') }}">Lokasi</a></li>
+            <li><a href="{{ url_for('kontak') }}">Kontak</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Lokasi HiddenGame</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Cabang 1</h2>
+            <p>Alamat: Jalan Pemuda Pancasila 23 Surabaya</p>
+            <p>Telepon: 0895681923167</p>
+        </section>
+        <section>
+            <h2>Cabang 2</h2>
+            <p>Alamat: Jalan Senin no 48 Jakarta Pusat</p>
+            <p>Telepon: 0827192310273</p>
+        </section>
+        <section>
+            <h2>Cabang 3</h2>
+            <p>Alamat: Jalan Mawar 12 Bandung</p>
+            <p>Telepon: 088391027182</p>
+        </section>
+        <section>
+            <h2>Cabang 3</h2>
+            <p>Alamat: Jalan Diponeroro Malang</p>
+            <p>Telepon: 0882738192773</p>
+        </section>
+        <section>
+            <h2>Cabang 4</h2>
+            <p>Alamat: Jalan Matahari Barat Semarang</p>
+            <p>Telepon: 0817219629172</p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuToggle = document.querySelector('.menu-toggle');
+            var navUL = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', function() {
+                navUL.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
